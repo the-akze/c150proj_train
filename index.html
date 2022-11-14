@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>train</title>
+
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene>
+        <a-camera position="0 4 12"></a-camera>
+        <a-assets>
+            <a-asset-item id="train" src="models/train.glb"></a-asset-item>
+        </a-assets>
+
+        <a-entity light="type: ambient; color: #EEE; intensity:0.7;" position="5 10 8"></a-entity>
+
+        <a-entity>
+            <a-entity light="type: directional; castShadow:true; color: #EEE; intensity:1;" position="5 10 8"></a-entity>
+        </a-entity>
+
+        <a-circle radius="100" position="0 0 0" rotation="-90 0 0" shadow="receive:true" color="lightgreen"></a-circle>
+
+        <a-entity>
+            <a-entity position="0 0 0" rotation="0 0 0" scale="0.2 0.2 0.2" gltf-model="#train" color="white" shadow="cast:true"></a-entity>
+        </a-entity>
+
+        <a-box position="0 0 0.2" width="100" height="0.1" depth="0.5" color="#202020"></a-box>
+        <a-box position="0 0 -2.2" width="100" height="0.1" depth="0.5" color="#202020" shadow="receive:true; cast:true"></a-box>
+
+        <a-box position="0 5 -5" width="70" height="10" depth="0.1" material="src:imgs/fence.png; transparent:true;" receive:true; cast:true"></a-box>
+
+        <a-sky color="skyblue"></a-sky>
+    </a-scene>
+</body>
+</html>
